@@ -11,12 +11,27 @@ base {
 }
 
 repositories {
+	// Modrinth's maven, used only to get Sodium's jar (which contains its Config API) at compile time
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = 'Modrinth'
+				url = 'https://api.modrinth.com/maven'
+			}
+		}
+		filter {
+			includeGroup 'maven.modrinth'
+		}
+	}
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Sodium (compile-time only; it is optional at runtime). Provides the Config API classes.
+	compileOnly "maven.modrinth:sodium:${project.sodium_version}"
 }
 
 processResources {
