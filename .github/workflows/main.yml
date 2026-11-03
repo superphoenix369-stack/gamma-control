@@ -10,10 +10,12 @@ jobs:
         with:
           distribution: temurin
           java-version: 25
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
+      # Installs Gradle itself, so no gradlew/wrapper files are needed in the repo.
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: current
       - name: Build
-        run: ./gradlew build
+        run: gradle build --stacktrace
       - uses: actions/upload-artifact@v4
         with:
           name: gammabar-jar
