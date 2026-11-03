@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "gammabar",
+  "version": "${version}",
+  "name": "Gamma Bar",
+  "description": "Adds an extended gamma slider (-100% to 1500%) to Video Settings.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.gammabar.GammaBarClient"],
+    "sodium:config_api_user": ["com.example.gammabar.sodium.GammaBarSodiumConfig"]
+  },
+  "mixins": ["gammabar.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

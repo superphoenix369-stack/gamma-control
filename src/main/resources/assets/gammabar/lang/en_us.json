@@ -1,0 +1,5 @@
+{
+  "options.gammabar.gamma": "Gamma",
+  "options.gammabar.page": "Gamma",
+  "options.gammabar.gamma.tooltip": "Brightness from -100% (pitch black) to 1500%. 0% is vanilla Moody, 100% is vanilla Bright."
+}
