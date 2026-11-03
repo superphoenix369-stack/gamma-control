@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.example.gammabar.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "OptionInstanceAccessor",
+    "OptionsMixin",
+    "VideoSettingsScreenMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}
